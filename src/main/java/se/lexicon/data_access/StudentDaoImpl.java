@@ -36,6 +36,7 @@ public class StudentDaoImpl implements StudentDao {
 
     @Override
     public void delete(int id) {
+        students.remove(find(id));
 
     }
 }
