@@ -20,5 +20,8 @@ public class App {
 //        studentDao.delete(2);
         System.out.println(studentDao.find(2));
 
+
+
+
     }
 }
