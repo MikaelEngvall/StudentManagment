@@ -21,6 +21,9 @@ public class App {
 //        System.out.println(studentDao.findAll());
 //        studentDao.delete(2);
 //        System.out.println(studentDao.find(1));
+        String userInput = userInputService.getString();
+        System.out.println("User input: " + userInput);
 
+        context.close(); // Close the context when you're done
     }
 }
