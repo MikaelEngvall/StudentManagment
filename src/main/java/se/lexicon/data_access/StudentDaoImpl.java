@@ -24,14 +24,14 @@ public class StudentDaoImpl implements StudentDao {
 
     @Override
     public Student find(int id) {
-        return (Student) students.stream()
-                .filter(student -> students.equals(student.getId()))
-                .toList();
+        return students.stream()
+                .filter(student -> student.getId()==id)
+                .findFirst().orElse(null);
     }
 
     @Override
-    public List<Student> findAll(Student student) {
-        return null;
+    public List<Student> findAll() {
+        return students;
     }
 
     @Override
