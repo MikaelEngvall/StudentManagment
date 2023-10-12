@@ -50,9 +50,4 @@ public class StudentManagementConsoleImpl implements StudentManagement {
             System.out.println("Student not found.");
         }
     }
-
-    @Override
-    public void manageStudents() {
-        // Implement your student management logic here
-    }
 }

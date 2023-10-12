@@ -1,5 +1,4 @@
 package se.lexicon;
-
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import se.lexicon.config.ComponentScanConfig;
 import se.lexicon.data_access.StudentDao;
@@ -12,22 +11,8 @@ public class App {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ComponentScanConfig.class);
         StudentDao studentDao = context.getBean(StudentDao.class);
         UserInputService userInputService = context.getBean(UserInputService.class);
-//        Student student = new Student("Test Testsson");
-//        Student student2 = new Student("Test2 Test2sson");
-//        Student student3 = new Student("Test3 Test3sson");
-//        studentDao.save(student);
-//        studentDao.save(student2);
-//        studentDao.save(student3);
-//        System.out.println(student);
-//        System.out.println(studentDao.findAll());
-//        studentDao.delete(2);
-//        System.out.println(studentDao.find(1));
-//        String userInput = userInputService.getString();
-//        System.out.println("User input: " + userInput);
-//
-//        context.close(); // Close the context when you're done
-        // Get the StudentManagement and UserInputService beans
         StudentManagement studentManagement = context.getBean(StudentManagement.class);
+        // Get the StudentManagement and UserInputService beans
 
         // Example usage:
         while (true) {
@@ -49,7 +34,7 @@ public class App {
                     break;
                 case "2":
                     System.out.print("Enter the student's ID: ");
-                    int idToFind = Integer.parseInt(userInputService.getString());
+                    int idToFind = userInputService.getInt();
                     Student foundStudent = studentManagement.findStudent(idToFind);
                     if (foundStudent != null) {
                         System.out.println("Found Student: " + foundStudent);

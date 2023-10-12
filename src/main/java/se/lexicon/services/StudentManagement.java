@@ -10,5 +10,4 @@ public interface StudentManagement {
     List<Student> findAllStudents();
     void editStudent(int id, String newName);
     void deleteStudent(int id);
-    void manageStudents();
 }
